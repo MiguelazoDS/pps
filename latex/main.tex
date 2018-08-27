@@ -1,0 +1,38 @@
+%Define el tipo de documento, tamaño de letra y tipo de papel
+\documentclass[12pt, a4paper]{article}
+%Incluye el archivo style.sty
+\usepackage{Preamble/style}
+%Setea la ruta de las imágenes. Se pueden agregar más directorios de igual forma entre las llaves exteriores
+\graphicspath{{Images/}}
+%Setea la ruta de las referencias
+\addbibresource{References/references.bib}
+\newtcolorbox{mybox}[1]
+{
+	colframe = blue!25!,
+	colback  = blue!10!,
+	title    = #1
+}
+%Soluciona el problema de no poder poner ñ en los comentarios de códigos
+\lstset{literate=
+	{ñ}{{\~n}}1 
+}
+%Personalizar encabezado y pie de página
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Algo}
+\rhead{Algo {\includegraphics[width=15mm]{fcefyn.jpg}}}
+\rfoot{P\'agina \thepage}
+\begin{document}
+  \include{Sections/caratula}
+  \newpage
+  \begin{titlepage}
+    \tableofcontents
+  \end{titlepage}
+  \include{Sections/seccion1}
+  %Imprime las referencias. Se puede poner en cualquier parte del documento. Para no imprimir el encabezado colocar [heading=none]
+  %En la sección donde se desea que se impriman las referencias si agregamos "\nocite{*}" (sin comillas) agrega las referencias sin necesidad de citarlas
+  \printbibliography
+  %Agrega las referencias a la tabla de contenidos
+  \addcontentsline{toc}{section}{Referencias}
+  %Agregar direcciones url
+\end{document}
