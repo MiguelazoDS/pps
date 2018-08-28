@@ -1974,9 +1974,6 @@
     <bcf:datasource type="file" datatype="bibtex">References/references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">einstein</bcf:citekey>
-    <bcf:citekey order="2">dirac</bcf:citekey>
-    <bcf:citekey order="3">knuthwebsite</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
