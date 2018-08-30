@@ -39,7 +39,6 @@ if __name__ == '__main__':
     #defino cantidad de procesos que se corren
     num_process = 4
 
-
     # creo nombres para procesos
     nameProcess = []
     for i in range(0,num_process): 
@@ -52,7 +51,7 @@ if __name__ == '__main__':
 
     # defino procesos
     for i in range(0,lenProcess):
-      nameProcess[i]= Process(target=doWork, args=(N,q))
+      nameProcess[i]= Process(target=doWork, args=(N/num_process,q))
       nameProcess[i].start()
 
     results = []
