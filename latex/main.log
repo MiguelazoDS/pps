@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.7.7)  28 AUG 2018 13:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.7.7)  30 AUG 2018 11:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1233,134 +1233,145 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 3.
 
-Overfull \hbox (5.7002pt too wide) in paragraph at lines 4--12
+Overfull \hbox (5.7002pt too wide) in paragraph at lines 4--13
 [][][]$\OT1/cmtt/m/n/12 h t t p s : / / s t a c k o v e r f l o w . c o m / q u
  e s t i o n s / 4 3 4 3 9 1 9 4 / p y t h o n -[] m u l t i p r o c e s s
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--12
+Underfull \hbox (badness 10000) in paragraph at lines 4--13
 
  []
 
 
-Overfull \hbox (7.2002pt too wide) in paragraph at lines 4--12
+Overfull \hbox (7.2002pt too wide) in paragraph at lines 4--13
 [][]$\OT1/cmtt/m/n/12 h t t p s : / / p 1 6 . p r a e t o r i a n . c o m / b l
  o g / m u l t i -[] c o r e -[] a n d -[] d i s t r i b u t e d -[] p r o g r
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--12
+Underfull \hbox (badness 10000) in paragraph at lines 4--13
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--12
+Underfull \hbox (badness 10000) in paragraph at lines 4--13
 
  []
 
 
-Overfull \hbox (6.2002pt too wide) in paragraph at lines 4--12
+Overfull \hbox (6.2002pt too wide) in paragraph at lines 4--13
 [][]$\OT1/cmtt/m/n/12 h t t p s : / / b l o g . t h e d a t a i n c u b a t o r
  . c o m / 2 0 1 8 / 0 4 / p y t h o n -[] m u l t i -[] t h r e a d i n g
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--12
+Underfull \hbox (badness 10000) in paragraph at lines 4--13
 
  []
 
 
-Overfull \hbox (7.2002pt too wide) in paragraph at lines 4--12
+Overfull \hbox (7.2002pt too wide) in paragraph at lines 4--13
 [][]$\OT1/cmtt/m/n/12 h t t p s : / / t i m b e r . i o / b l o g / m u l t i p
  r o c e s s i n g -[] v s -[] m u l t i t h r e a d i n g -[] i n -[] p y t h
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--12
+Underfull \hbox (badness 10000) in paragraph at lines 4--13
 
  []
 
 
-Overfull \hbox (6.2002pt too wide) in paragraph at lines 4--12
+Overfull \hbox (6.2002pt too wide) in paragraph at lines 4--13
 [][]$\OT1/cmtt/m/n/12 h t t p s : / / s t a c k o v e r f l o w . c o m / q u e
  s t i o n s / 1 5 6 3 9 7 7 9 / w h y -[] d o e s -[] m u l t i p r o c e
  []
 
 
-Overfull \hbox (9.7002pt too wide) in paragraph at lines 4--12
+Overfull \hbox (9.7002pt too wide) in paragraph at lines 4--13
 \OT1/cmtt/m/n/12 s s i n g -[] u s e -[] o n l y -[] a -[] s i n g l e -[] c o 
 r e -[] a f t e r -[] i -[] i m p o r t -[] n u m p y / 1 5 6 4 1 1 4 8 # 1 5 6
  4 1
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--12
+Underfull \hbox (badness 10000) in paragraph at lines 4--13
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--12
+Underfull \hbox (badness 10000) in paragraph at lines 4--13
 
  []
 
 
-Overfull \hbox (6.2002pt too wide) in paragraph at lines 4--12
+Overfull \hbox (6.2002pt too wide) in paragraph at lines 4--13
 [][]$\OT1/cmtt/m/n/12 h t t p s : / / d e v o p s l o g . w o r d p r e s s . c
  o m / 2 0 1 2 / 0 4 / 1 5 / m e r g e s o r t -[] e x a m p l e -[] u s i
  []
 
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 12.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 12.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 12.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 12.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 12.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 12.
 
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
+Underfull \hbox (badness 10000) in paragraph at lines 4--13
+
+ []
+
+
+Overfull \hbox (11.8752pt too wide) in paragraph at lines 4--13
+[][]$\OT1/cmtt/m/n/12 h t tp : / / c s l o c u m w x . g i t h u b . i o / b l 
+o g / 2 0 1 5 / 0 2 / 2 3 / p y t h o n -[] m u l t i p r o c e s s i n g
+ []
+
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 13.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 13.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 13.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 13.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 13.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 13.
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
 \OT1/cmr/m/n/12 suns-hi-ne. Ho-we-ver, the
  []
 
 
-Underfull \hbox (badness 4846) in paragraph at lines 18--19
+Underfull \hbox (badness 4846) in paragraph at lines 19--20
 \OT1/cmr/m/n/12 strong bree-ze will bring
  []
 
 
-Underfull \hbox (badness 2197) in paragraph at lines 20--22
+Underfull \hbox (badness 2197) in paragraph at lines 21--23
 []|\OT1/cmr/m/n/12 Cloudy with rain, across
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 20--22
+Underfull \hbox (badness 10000) in paragraph at lines 21--23
 \OT1/cmr/m/n/12 many nort-hern re-gions.
  []
 
 
-Underfull \hbox (badness 3668) in paragraph at lines 20--22
+Underfull \hbox (badness 3668) in paragraph at lines 21--23
 \OT1/cmr/m/n/12 Clear spells across most
  []
 
 
-Underfull \hbox (badness 5460) in paragraph at lines 23--26
+Underfull \hbox (badness 5460) in paragraph at lines 24--27
 \OT1/cmr/m/n/12 mor-ning. Con-di-tions will
  []
 
 
-Underfull \hbox (badness 5578) in paragraph at lines 23--26
+Underfull \hbox (badness 5578) in paragraph at lines 24--27
 \OT1/cmr/m/n/12 and con-ti-nue th-roug-hout
  []
 
-<Images/fcefyn.jpg, id=90, 225.84375pt x 112.92188pt>
+<Images/fcefyn.jpg, id=91, 225.84375pt x 112.92188pt>
 File: Images/fcefyn.jpg Graphic file (type jpg)
 <use Images/fcefyn.jpg>
-Package pdftex.def Info: Images/fcefyn.jpg  used on input line 28.
+Package pdftex.def Info: Images/fcefyn.jpg  used on input line 29.
 (pdftex.def)             Requested size: 42.67912pt x 21.3382pt.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1369,306 +1380,306 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 28.
+(babel)             in language  on input line 29.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 28.
+(babel)             in language  on input line 29.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 28.
+(babel)             in language  on input line 29.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 28.
+(babel)             in language  on input line 29.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 28.
+(babel)             in language  on input line 29.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 28.
+(babel)             in language  on input line 29.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 28.
+(babel)             in language  on input line 29.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 28.
+(babel)             in language  on input line 29.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 28.
+(babel)             in language  on input line 29.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 28.
+(babel)             in language  on input line 29.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 28.
+(babel)             in language  on input line 29.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 28.
+(babel)             in language  on input line 29.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.28 \end{center}
+l.29 \end{center}
                   [1
 
  <./Images/fcefyn.jpg>]
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 77.
+(babel)             in language  on input line 78.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 77.
+(babel)             in language  on input line 78.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 77.
+(babel)             in language  on input line 78.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 77.
+(babel)             in language  on input line 78.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 77.
+(babel)             in language  on input line 78.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 77.
+(babel)             in language  on input line 78.
 
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 92.
+(hyperref)                than one, level fixed on input line 93.
 
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 92.
+(babel)             in language  on input line 93.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 92.
+(babel)             in language  on input line 93.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 92.
+(babel)             in language  on input line 93.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 92.
+(babel)             in language  on input line 93.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 92.
+(babel)             in language  on input line 93.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 92.
+(babel)             in language  on input line 93.
 
-Overfull \hbox (117.14731pt too wide) in paragraph at lines 92--92
+Overfull \hbox (117.14731pt too wide) in paragraph at lines 93--93
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--92
+Underfull \hbox (badness 10000) in paragraph at lines 93--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--92
+Underfull \hbox (badness 10000) in paragraph at lines 93--93
 
  []
 
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 104.
+(babel)             in language  on input line 105.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 104.
+(babel)             in language  on input line 105.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 104.
+(babel)             in language  on input line 105.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 104.
+(babel)             in language  on input line 105.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 104.
+(babel)             in language  on input line 105.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 104.
+(babel)             in language  on input line 105.
 
-Overfull \hbox (117.14731pt too wide) in paragraph at lines 104--104
+Overfull \hbox (117.14731pt too wide) in paragraph at lines 105--105
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--104
+Underfull \hbox (badness 10000) in paragraph at lines 105--105
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--104
+Underfull \hbox (badness 10000) in paragraph at lines 105--105
 
  []
 
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 116.
+(babel)             in language  on input line 117.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 116.
+(babel)             in language  on input line 117.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 116.
+(babel)             in language  on input line 117.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 116.
+(babel)             in language  on input line 117.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 116.
+(babel)             in language  on input line 117.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 116.
+(babel)             in language  on input line 117.
 
-Overfull \hbox (117.14731pt too wide) in paragraph at lines 116--116
+Overfull \hbox (117.14731pt too wide) in paragraph at lines 117--117
 [][] 
  []
 
 File: Images/fcefyn.jpg Graphic file (type jpg)
 <use Images/fcefyn.jpg>
-Package pdftex.def Info: Images/fcefyn.jpg  used on input line 118.
+Package pdftex.def Info: Images/fcefyn.jpg  used on input line 119.
 (pdftex.def)             Requested size: 42.67912pt x 21.3382pt.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 118.
+(babel)             in language  on input line 119.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 118.
+(babel)             in language  on input line 119.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 118.
+(babel)             in language  on input line 119.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 118.
+(babel)             in language  on input line 119.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 118.
+(babel)             in language  on input line 119.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 118.
+(babel)             in language  on input line 119.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 118.
+(babel)             in language  on input line 119.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 118.
+(babel)             in language  on input line 119.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 118.
+(babel)             in language  on input line 119.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 118.
+(babel)             in language  on input line 119.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 118.
+(babel)             in language  on input line 119.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 118.
+(babel)             in language  on input line 119.
 [2]
 File: Images/fcefyn.jpg Graphic file (type jpg)
 <use Images/fcefyn.jpg>
-Package pdftex.def Info: Images/fcefyn.jpg  used on input line 118.
+Package pdftex.def Info: Images/fcefyn.jpg  used on input line 119.
 (pdftex.def)             Requested size: 42.67912pt x 21.3382pt.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 118.
+(babel)             in language  on input line 119.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 118.
+(babel)             in language  on input line 119.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 118.
+(babel)             in language  on input line 119.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 118.
+(babel)             in language  on input line 119.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 118.
+(babel)             in language  on input line 119.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 118.
+(babel)             in language  on input line 119.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 118.
+(babel)             in language  on input line 119.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 118.
+(babel)             in language  on input line 119.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 118.
+(babel)             in language  on input line 119.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 118.
+(babel)             in language  on input line 119.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 118.
+(babel)             in language  on input line 119.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 118.
+(babel)             in language  on input line 119.
  [3]
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 138.
+(babel)             in language  on input line 139.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 138.
+(babel)             in language  on input line 139.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 138.
+(babel)             in language  on input line 139.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 138.
+(babel)             in language  on input line 139.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 138.
+(babel)             in language  on input line 139.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 138.
-<Images/google.png, id=114, 305.64188pt x 305.64188pt>
+(babel)             in language  on input line 139.
+<Images/google.png, id=116, 305.64188pt x 305.64188pt>
 File: Images/google.png Graphic file (type png)
 <use Images/google.png>
-Package pdftex.def Info: Images/google.png  used on input line 140.
+Package pdftex.def Info: Images/google.png  used on input line 141.
 (pdftex.def)             Requested size: 142.26378pt x 142.2619pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--142
+Underfull \hbox (badness 10000) in paragraph at lines 140--143
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--142
+Underfull \hbox (badness 10000) in paragraph at lines 140--143
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--142
+Underfull \hbox (badness 10000) in paragraph at lines 140--143
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--142
+Underfull \hbox (badness 10000) in paragraph at lines 140--143
 
  []
 
 File: Images/fcefyn.jpg Graphic file (type jpg)
 <use Images/fcefyn.jpg>
-Package pdftex.def Info: Images/fcefyn.jpg  used on input line 142.
+Package pdftex.def Info: Images/fcefyn.jpg  used on input line 143.
 (pdftex.def)             Requested size: 42.67912pt x 21.3382pt.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 142.
+(babel)             in language  on input line 143.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 142.
+(babel)             in language  on input line 143.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 142.
+(babel)             in language  on input line 143.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 142.
+(babel)             in language  on input line 143.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 142.
+(babel)             in language  on input line 143.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 142.
+(babel)             in language  on input line 143.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 142.
+(babel)             in language  on input line 143.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 142.
+(babel)             in language  on input line 143.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 142.
+(babel)             in language  on input line 143.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 142.
+(babel)             in language  on input line 143.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 142.
+(babel)             in language  on input line 143.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 142.
+(babel)             in language  on input line 143.
 [4]
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 143.
+(babel)             in language  on input line 144.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 143.
+(babel)             in language  on input line 144.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 143.
+(babel)             in language  on input line 144.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 143.
+(babel)             in language  on input line 144.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 143.
+(babel)             in language  on input line 144.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 143.
-<Images/prueba.pdf, id=122, 197.57413pt x 151.6907pt>
+(babel)             in language  on input line 144.
+<Images/prueba.pdf, id=124, 197.57413pt x 151.6907pt>
 File: Images/prueba.pdf Graphic file (type pdf)
 <use Images/prueba.pdf>
-Package pdftex.def Info: Images/prueba.pdf  used on input line 147.
+Package pdftex.def Info: Images/prueba.pdf  used on input line 148.
 (pdftex.def)             Requested size: 197.57364pt x 151.69032pt.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 153.
+(babel)             in language  on input line 154.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 153.
+(babel)             in language  on input line 154.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 153.
+(babel)             in language  on input line 154.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 153.
+(babel)             in language  on input line 154.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 153.
+(babel)             in language  on input line 154.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 153.
+(babel)             in language  on input line 154.
 File: Images/fcefyn.jpg Graphic file (type jpg)
 <use Images/fcefyn.jpg>
-Package pdftex.def Info: Images/fcefyn.jpg  used on input line 204.
+Package pdftex.def Info: Images/fcefyn.jpg  used on input line 205.
 (pdftex.def)             Requested size: 42.67912pt x 21.3382pt.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 204.
+(babel)             in language  on input line 205.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 204.
+(babel)             in language  on input line 205.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 204.
+(babel)             in language  on input line 205.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 204.
+(babel)             in language  on input line 205.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 204.
+(babel)             in language  on input line 205.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 204.
+(babel)             in language  on input line 205.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 204.
+(babel)             in language  on input line 205.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 204.
+(babel)             in language  on input line 205.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 204.
+(babel)             in language  on input line 205.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 204.
+(babel)             in language  on input line 205.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 204.
+(babel)             in language  on input line 205.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 204.
+(babel)             in language  on input line 205.
  [5 <./Images/google.png> <./Images/prueba.pdf>])
 File: Images/fcefyn.jpg Graphic file (type jpg)
 <use Images/fcefyn.jpg>
@@ -1752,15 +1763,8 @@ LaTeX Info: Redefining \% on input line 30.
  (./Sections/seccion1.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 38.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 38.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 4C1D2AC4CA328B80176C1C1D5CC378BB;700
-(rerunfilecheck)             After:  5375BC1F8A0CDE150E42948D70E2E6CB;694.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 5375BC1F8A0CDE150E42948D70E2E6CB;694.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
@@ -1768,7 +1772,7 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  29356 strings out of 492649
  559683 string characters out of 6135779
- 1053100 words of memory out of 5000000
+ 1054100 words of memory out of 5000000
  32696 multiletter control sequences out of 15000+600000
  13555 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1784,10 +1788,10 @@ dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type
 s/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (9 pages, 737797 bytes).
+Output written on main.pdf (9 pages, 738157 bytes).
 PDF statistics:
- 213 PDF objects out of 1000 (max. 8388607)
- 182 compressed objects within 2 object streams
+ 215 PDF objects out of 1000 (max. 8388607)
+ 184 compressed objects within 2 object streams
  29 named destinations out of 1000 (max. 500000)
  129 words of extra memory for PDF output out of 10000 (max. 10000000)
 
