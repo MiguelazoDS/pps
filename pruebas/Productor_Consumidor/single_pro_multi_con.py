@@ -2,12 +2,12 @@
 from multiprocessing import Manager, Process, Pool,Queue
 from Queue import Empty
 import time
+import random
 
 def writer(queue):
-   for i in range(1000):
+   for i in range(80000):
      queue.put(i)
      print 'put %i size now %i'%(i, queue.qsize())
-     time.sleep(2)
 
 def reader(id, queue):
    for i in range(1000):
@@ -16,12 +16,12 @@ def reader(id, queue):
        print '%i got %i size now %i'%(id, cnt, queue.qsize())
      except Empty:
        pass #no hace nada si la cola esta vacia
-     time.sleep(6)
+     time.sleep( random.random())
 
 class Managerss:
    def __init__(self):
      self.queue= Queue()
-     self.NUMBER_OF_PROCESSES = 100 #cantidad de consumidores
+     self.NUMBER_OF_PROCESSES = 400 #cantidad de consumidores
 
 
    def start(self): 
