@@ -51,7 +51,7 @@ if __name__ == '__main__':
 
     # defino procesos
     for i in range(0,lenProcess):
-      nameProcess[i]= Process(target=doWork, args=(N/num_process,q))
+      nameProcess[i]= Process(target=doWork, args=(N//num_process,q))
       nameProcess[i].start()
 
     results = []
