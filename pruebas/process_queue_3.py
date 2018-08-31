@@ -9,7 +9,7 @@ random.seed()
 def genList (size):
     randomList = []
     for i in range(size):
-        randomList.append(random.randint(0,10))     
+        randomList.append(random.randint(0,10))
     return randomList
 
 #calcula la suma acumulada de todos lo valores de la lista
@@ -41,16 +41,17 @@ if __name__ == '__main__':
 
     # creo nombres para procesos
     nameProcess = []
-    for i in range(0,num_process): 
+    for i in range(0,num_process):
       nameProcess.append("p" + str(i+1)) #arranca de 1 a 4
-	
+
     lenProcess = len(nameProcess)
-     
-    # for i in range(0,lenProcess): 
+
+    # for i in range(0,lenProcess):
     # print (nameProcess[i])
 
     # defino procesos
     for i in range(0,lenProcess):
+      #// división entera
       nameProcess[i]= Process(target=doWork, args=(N//num_process,q))
       nameProcess[i].start()
 
@@ -63,17 +64,16 @@ if __name__ == '__main__':
     #sum the partial results to get the final result
     finalSum = sumList(results)
 
-    #join para cada proceso      
+    #join para cada proceso
     for i in range(0,lenProcess):
       nameProcess[i].join()
 
     endTime = time.time() #obtener el tiempo de finalizado
     workTime =  endTime - startTime #calculo del tiempo para completar el trabajo
-         
+
     #imprimo resultados
     print ("Tiempo total " + str(workTime) + " segundos")
     print ("Suma del resultado final: " + str(finalSum) )
 
-  else: 
+  else:
     exit(-1)
-
