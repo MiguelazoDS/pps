@@ -66,4 +66,4 @@ if __name__ == "__main__":
         start = time.time()
         data_sorted = sort(data_unsorted)
         end = time.time() - start
-        #print sort.__name__, end, sorted(data_unsorted) == data_sorted
+        print sort.__name__, end, sorted(data_unsorted) == data_sorted

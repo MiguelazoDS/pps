@@ -30,7 +30,7 @@ def merge_sort(data):
     length = len(data)
     if length <= 1:
         return data
-    middle = length / 2
+    middle = length // 2
     left = merge_sort(data[:middle])
     right = merge_sort(data[middle:])
     return merge(left, right)
@@ -43,7 +43,7 @@ def merge_sort_parallel(data):
     # across each partition.
     processes = multiprocessing.cpu_count()
     pool = multiprocessing.Pool(processes=processes)
-    size = int(math.ceil(float(len(data)) / processes))
+    size = int(math.ceil(float(len(data)) // processes))
     data = [data[i * size:(i + 1) * size] for i in range(processes)]
     data = pool.map(merge_sort, data)
     # Each partition is now sorted - we now just merge pairs of these
