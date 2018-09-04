@@ -11,12 +11,12 @@ from multiprocessing import Semaphore
 class Producer(multiprocessing.Process):
 	def __init__(self, items, can_produce, can_consume):
 		multiprocessing.Process.__init__(self)
-		self.items = items
+		self.imagenes = imagenes
 		self.can_produce = can_produce
 		self.can_consume = can_consume
 
-	def produce_item(self):
-		self.items.append(1)
+	def produce_imagenes(self):
+		self.imagenes.append(1)
 		print ("{}: i produced an item".format(self.name))
 
 	def wait(self):
@@ -32,18 +32,18 @@ class Producer(multiprocessing.Process):
 			self.wait()
 			print ("produzco")
 			self.can_produce.acquire() #disminuye en uno la cantidad de permisos
-		#	self.produce_item()
+			self.produce_imagenes()
 			self.can_consume.release() #aumento en uno la cantidad de permisos
 
 class Consumer(multiprocessing.Process):
-	def __init__( self, items, can_produce, can_consume ):
+	def __init__( self, imagenes, can_produce, can_consume ):
 		multiprocessing.Process.__init__(self)
-		self.items = items
+		self.imagenes = imagenes
 		self.can_produce = can_produce
 		self.can_consume = can_consume
 
-	def consume_item(self):
-		item = self.items.pop() #remueve y devuelve el ultimo objeto de la lista
+	def consume_imagenes(self):
+		item = self.imagenes.pop() #remueve y devuelve el ultimo objeto de la lista
 		print ("{}: i consumed an item".format(self.name))
 
 	def wait(self):
@@ -58,7 +58,7 @@ class Consumer(multiprocessing.Process):
 			print ("consumo")
 			self.wait()
 			self.can_consume.acquire()  #disminuye en uno la cantidad de permisos
-		#	self.consume_item()
+			self.consume_imagenes()
 			self.can_produce.release()  #aumento en uno la cantidad de permisos
 
 
@@ -73,20 +73,19 @@ if __name__ == "__main__":
 	count_consumers = int(sys.argv[2])
 	buffer_length = int(sys.argv[3])
 
-	items = []
+	imagenes = Queue()
 	producers = []
 	consumers = []
 
 	#acquire mientras buffer no esta full
 	#crea semaforo con una cantidad "buffer_length" de permisos
 	can_produce = Semaphore(buffer_length)
-
 	#acquire mientras buffer no este vacio
 	#crea semaforo con 0 de permisos que va llenando a medida que se produce
 	can_consume = Semaphore(0)
 
-	producers = [Producer(items, can_produce, can_consume) for i in range(count_producers)]
-	consumers = [Consumer(items, can_produce, can_consume) for i in range(count_consumers)]
+	producers = [Producer(imagenes, can_produce, can_consume) for i in range(count_producers)]
+	consumers = [Consumer(imagenes, can_produce, can_consume) for i in range(count_consumers)]
 
 	for p in producers:
 		p.start()
