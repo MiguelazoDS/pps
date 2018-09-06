@@ -5,18 +5,33 @@
 import sys
 import random
 import time
+import scipy.misc
 from threading import *
+import queue
+
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt
 
 class Producer(Thread):
-	def __init__(self, items, can_produce, can_consume):
+
+	lista = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg","6.jpg","7.jpg",
+			 "8.jpg","9.jpg", "10.jpg", "11.jpg" , "12.jpg", "13.jpg"]
+
+	def __init__(self, images, can_produce, can_consume):
 		Thread.__init__(self)
-		self.items = items
+		self.images = images
 		self.can_produce = can_produce
 		self.can_consume = can_consume
 
-	def produce_item(self):
-		self.items.append(1)
-		print ("{}: i produced an item".format(self.name))
+	def produce_images(self):
+		for f in self.lista:
+			self.wait()
+			images.put(scipy.misc.imread(f))
+			self.can_consume.release() #aumento en uno la cantidad de permisos
+			print ("{}: i produced an images".format(self.name))
+		#	images.put(scipy.misc.imread('python.jpg'))
+
 
 	def wait(self):
 		time.sleep(random.uniform(0, 3))
@@ -27,22 +42,36 @@ class Producer(Thread):
 		#en caso de que no pueda hacer el acquire se queda esperando el release
 		#del consumidor. Cuando produce un item hace un release en el semaforo
 		#del consumidor (aumenta en una unidad los permisos).
-		while 1:
-			self.wait()
-			self.can_produce.acquire() #disminuye en uno la cantidad de permisos
-			self.produce_item()
-			self.can_consume.release() #aumento en uno la cantidad de permisos
+		print ("produzco")
+		self.can_produce.acquire() #disminuye en uno la cantidad de permisos
+		self.produce_images()
+#		self.can_consume.release() #aumento en uno la cantidad de permisos
+
 
 class Consumer(Thread):
-	def __init__(self, items, can_produce, can_consume):
+	def __init__(self, images, can_produce, can_consume):
 		Thread.__init__(self)
-		self.items = items
+		self.images = images
 		self.can_produce = can_produce
 		self.can_consume = can_consume
 
-	def consume_item(self):
-		item = self.items.pop() #remueve y devuelve el ultimo objeto de la lista
-		print ("{}: i consumed an item".format(self.name))
+	def consume_images(self):
+		try:
+			img = images.get()
+			edges = cv2.Canny(img,100,200)
+			#corregir esto!!!!!!!!
+			name = "./procesadas/" + str(random.randint(1, 1000))  +".jpg"
+			cv2.imwrite(name,edges)
+#			img = images.get()
+#			edges = cv2.Canny(img,100,200)
+#			plt.subplot(121),plt.imshow(img,cmap = 'gray')
+#			plt.title('Original Image'), plt.xticks([]), plt.yticks([])
+#			plt.subplot(122),plt.imshow(edges,cmap = 'gray')
+#			plt.title('Edge Image'), plt.xticks([]), plt.yticks([])
+#			plt.show()
+			print ("{}: i consumed an images".format(self.name))
+		except Queue.Empty:  # Queue here refers to the  module, not a class
+			print ('foo')
 
 	def wait(self):
 		time.sleep(random.uniform(0, 3))
@@ -53,9 +82,9 @@ class Consumer(Thread):
 		#esperando el release del productor. Cuando consume un item hace un
 		#release en el semaforo del prodcutor (aumenta en una unidad los permisos).
 		while 1:
-			self.wait()
+#			self.wait()
 			self.can_consume.acquire()  #disminuye en uno la cantidad de permisos
-			self.consume_item()
+			self.consume_images()
 			self.can_produce.release()  #aumento en uno la cantidad de permisos
 
 def usage(script):
@@ -68,11 +97,12 @@ if __name__ == "__main__":
 		usage(sys.argv[0])
 		sys.exit(0)
 
-	count_producers = int(sys.argv[1])
+	#count_producers = int(sys.argv[1])
+	count_producers = 1
 	count_consumers = int(sys.argv[2])
-	buffer_length = int(sys.argv[3])
+	buffer_length = 15
 
-	items = []
+	images = queue.Queue()
 	producers = []
 	consumers = []
 
@@ -84,13 +114,14 @@ if __name__ == "__main__":
 	#crea semaforo con 0 de permisos que va llenando a medida que se produce
 	can_consume = Semaphore(0)
 
-	for i in range(count_producers):
-		producers.append(Producer(items, can_produce, can_consume))
-		producers[-1].start()
+	producers = [Producer(images, can_produce, can_consume) for i in range(count_producers)]
+	consumers = [Consumer(images, can_produce, can_consume) for i in range(count_consumers)]
 
-	for i in range(count_consumers):
-		consumers.append(Consumer(items, can_produce, can_consume))
-		consumers[-1].start()
+	for p in producers:
+		p.start()
+
+	for c in consumers:
+		c.start()
 
 	for p in producers:
 		p.join()

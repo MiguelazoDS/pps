@@ -60,10 +60,8 @@ class Consumer(multiprocessing.Process):
 
 	def consume_images(self):
 		try:
-
 			img = images.get()
- 			edges = cv2.Canny(img,100,200)
-
+			edges = cv2.Canny(img,100,200)
 			#corregir esto!!!!!!!!
 			name = "./procesadas/" + str(random.randint(1, 1000))  +".jpg"
 			cv2.imwrite(name,edges)
@@ -76,7 +74,7 @@ class Consumer(multiprocessing.Process):
 #			plt.show()
 			print ("{}: i consumed an images".format(self.name))
 		except Queue.Empty:  # Queue here refers to the  module, not a class
-			print 'foo'
+			print ('foo')
 
 
 	def wait(self):
