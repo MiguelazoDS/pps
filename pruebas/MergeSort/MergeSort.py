@@ -1,4 +1,4 @@
-import sys, time, random
+import sys, time, random, multiprocessing, math
 
 #La función merge comienza con una comparación entre dos listas de
 #tamaño 1. Las listas sucesivas que recibe luego están ordenadas
@@ -17,6 +17,23 @@ def merge(izq, der):
     else:
         lst_ord.extend(izq[ind_izq:])
     return lst_ord
+
+def mergesort_paralelo(data):
+    #Crea un pool de procesos, uno por cada core.
+    procesos = multiprocessing.cpu_count()
+    pool = multiprocessing.Pool(processes=procesos)
+    #Particionamos los datos iniciales de igual tamaño y se hace un merge sort
+    #Para cada partición.
+    size = int(math.ceil(float(len(data)) / procesos))
+    data = [data[i * size:(i + 1) * size] for i in range(procesos)]
+    #Ordena cada partición por separado en cada uno de los cores.
+    data = pool.map(mergesort, data)
+    #Hacemos un merge de a pares hasta que nos quedamos con solo una
+    #partición.
+    #FALTA IMPLEMENTAR EN PARALELO Y CON UN NÚMERO DIFERENTE DE 4 CORES.
+    list1 = merge(data[0], data[1])
+    list2 = merge(data[2], data[3])
+    list = merge(list1, list2)
 
 #Divide una lista hasta que obtiene solo un elemento y envía ese valor a "merge"
 def mergesort(lst):
@@ -46,6 +63,10 @@ def main():
     mergesort(lista)
     final = time.time() - start
     print ("El algoritmo demoró %f segundos" % (final))
+    start = time.time()
+    mergesort_paralelo(lista)
+    final = time.time() - start
+    print ("El algoritmo paralelo demoró %f segundos" % (final))
 
 if __name__ == '__main__':
     main()
