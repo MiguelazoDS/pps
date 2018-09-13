@@ -1,7 +1,4 @@
 #https://gist.github.com/cristipufu/2d8724a7b526ef57e73a4f1709fa5690
-#La clase threading utiliza todos lo cores
-#Funciona en 2.7 y 3.7
-#En 2.7 no se puede cancelar el proceso desde la termina con ctrl+c
 import sys
 import random
 import time
@@ -16,7 +13,7 @@ from matplotlib import pyplot as plt
 class Producer(Thread):
 
 	lista = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg","6.jpg","7.jpg",
-			 "8.jpg","9.jpg", "10.jpg", "11.jpg" , "12.jpg", "13.jpg"]
+			 "8.jpg","9.jpg", "10.jpg", "11.jpg" , "12.jpg"]
 
 	def __init__(self, images, can_produce, can_consume):
 		Thread.__init__(self)
@@ -37,7 +34,7 @@ class Producer(Thread):
 		time.sleep(random.uniform(0, 3))
 
 	def run(self):
-		#Espera un tiempo, hace el aqcuire si hay lugar en la cola de semaforos
+		#hace el aqcuire si hay lugar en la cola de semaforos
 		#para producir (cantidad de permisos menor a la del tamano del buffer),
 		#en caso de que no pueda hacer el acquire se queda esperando el release
 		#del consumidor. Cuando produce un item hace un release en el semaforo
@@ -77,7 +74,7 @@ class Consumer(Thread):
 		time.sleep(random.uniform(0, 3))
 
 	def run(self):
-		#Espera un tiempo, hace el aqcuire si hay lugar en la cola de semaforos
+		#hace el aqcuire si hay lugar en la cola de semaforos
 		#para consumir en caso de que no pueda hacer el acquire se queda
 		#esperando el release del productor. Cuando consume un item hace un
 		#release en el semaforo del prodcutor (aumenta en una unidad los permisos).
