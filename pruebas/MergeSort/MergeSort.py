@@ -28,12 +28,19 @@ def mergesort_paralelo(data):
     data = [data[i * size:(i + 1) * size] for i in range(procesos)]
     #Ordena cada partición por separado en cada uno de los cores.
     data = pool.map(mergesort, data)
+    #Las 3 líneas siguientes realizan el merge sin el uso del paralelismo.
+    #list1 = merge(data[0], data[1])
+    #list2 = merge(data[2], data[3])
+    #list = merge(list1, list2)
     #Hacemos un merge de a pares hasta que nos quedamos con solo una
-    #partición.
-    #FALTA IMPLEMENTAR EN PARALELO Y CON UN NÚMERO DIFERENTE DE 4 CORES.
-    list1 = merge(data[0], data[1])
-    list2 = merge(data[2], data[3])
-    list = merge(list1, list2)
+    #partición. starmap permite utilizar múltiples argumentos.
+    while len(data) > 1:
+        #Si el número de particiones es impar, la quitamos y la agregamos al final
+        #Ya que estamos haciendo un merge de a pares.
+        extra = data.pop() if len(data) % 2 == 1 else None
+        data = [(data[i], data[i + 1]) for i in range(0, len(data), 2)]
+        data = pool.starmap(merge, data) + ([extra] if extra else [])
+    return data[0]
 
 #Divide una lista hasta que obtiene solo un elemento y envía ese valor a "merge"
 def mergesort(lst):
