@@ -6,7 +6,7 @@ import sys
 import random
 import time
 import multiprocessing
-from multiprocessing import Semaphore
+from multiprocessing import Semaphore, Queue
 
 class Producer(multiprocessing.Process):
 	def __init__(self, items, can_produce, can_consume):
@@ -16,7 +16,7 @@ class Producer(multiprocessing.Process):
 		self.can_consume = can_consume
 
 	def produce_imagenes(self):
-		self.imagenes.append(1)
+		self.imagenes.put(1)
 		print ("{}: i produced an item".format(self.name))
 
 	def wait(self):
@@ -43,7 +43,7 @@ class Consumer(multiprocessing.Process):
 		self.can_consume = can_consume
 
 	def consume_imagenes(self):
-		item = self.imagenes.pop() #remueve y devuelve el ultimo objeto de la lista
+		item = self.imagenes.get() #remueve y devuelve el ultimo objeto de la lista
 		print ("{}: i consumed an item".format(self.name))
 
 	def wait(self):
