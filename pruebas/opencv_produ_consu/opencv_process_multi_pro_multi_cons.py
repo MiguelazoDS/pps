@@ -24,7 +24,7 @@ class Producer(multiprocessing.Process):
 
 	def produce_images(self):
 		for f in self.lista:
-			self.wait()
+		#	self.wait()
 			images.put(scipy.misc.imread(f))
 			self.can_consume.release() #aumento en uno la cantidad de permisos
 			print ("{}: i produced an images".format(self.name))
@@ -42,7 +42,6 @@ class Producer(multiprocessing.Process):
 		#del consumidor (aumenta en una unidad los permisos).
 #		while 1:
 		#	self.wait()
-		print ("produzco")
 		self.can_produce.acquire() #disminuye en uno la cantidad de permisos
 		self.produce_images()
 #		self.can_consume.release() #aumento en uno la cantidad de permisos
@@ -58,7 +57,7 @@ class Consumer(multiprocessing.Process):
 	def consume_images(self):
 		try:
 			img = images.get()
-			edges = cv2.Canny(img,100,200)
+			#edges = cv2.Canny(img,100,200)
 			name = "./procesadas/" + str(random.randint(1, 1000))  +".jpg"
 			cv2.imwrite(name,edges)
 			print ("{}: i consumed an images".format(self.name))
