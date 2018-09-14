@@ -55,17 +55,10 @@ class Consumer(Thread):
 	def consume_images(self):
 		try:
 			img = images.get()
-			edges = cv2.Canny(img,100,200)
-			#corregir esto!!!!!!!!
+			#edges = cv2.Canny(img,100,200)
 			name = "./procesadas/" + str(random.randint(1, 1000))  +".jpg"
-			cv2.imwrite(name,edges)
-#			img = images.get()
-#			edges = cv2.Canny(img,100,200)
-#			plt.subplot(121),plt.imshow(img,cmap = 'gray')
-#			plt.title('Original Image'), plt.xticks([]), plt.yticks([])
-#			plt.subplot(122),plt.imshow(edges,cmap = 'gray')
-#			plt.title('Edge Image'), plt.xticks([]), plt.yticks([])
-#			plt.show()
+			cv2.imwrite(name,img)
+			#cv2.imwrite(name,edges)
 			print ("{}: i consumed an images".format(self.name))
 		except Queue.Empty:  # Queue here refers to the  module, not a class
 			print ('foo')
