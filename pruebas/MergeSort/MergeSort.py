@@ -60,7 +60,7 @@ def main():
         #Si es un número genera la lista entre 0 y 1000 de N elementos
         if sys.argv[1].isdigit():
             N = int(sys.argv[1])
-            lista = [random.randint(0,1000) for i in range(N)]
+            lista = [random.randint(0,N) for i in range(N)]
             print ("Se generó una lista aleatoria de %d elementos" % (N))
         #Si no es un número sale del programa
         else:
