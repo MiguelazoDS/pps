@@ -1,3 +1,4 @@
+import lttngust
 import random
 import sys
 import time

@@ -9,7 +9,7 @@ import multiprocessing
 from multiprocessing import Semaphore, Queue
 
 class Producer(multiprocessing.Process):
-	def __init__(self, items, can_produce, can_consume):
+	def __init__(self, imagenes, can_produce, can_consume):
 		multiprocessing.Process.__init__(self)
 		self.imagenes = imagenes
 		self.can_produce = can_produce
