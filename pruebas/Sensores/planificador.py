@@ -1,36 +1,57 @@
-import random, multiprocessing
-import time
 import Sensor
+import random
+import time
+from multiprocessing import Process, Manager, Lock
+from multiprocessing.managers import BaseManager
 
-def alarmas(num_process, lista):
+
+def alarmas(object, num_process):
 
     while 1:
+        time.sleep(random.randint(14,15))
+        lista = object.get_obj()
+        print("Soy alarma " , lista)
         for i in range (0,num_process):
-            time.sleep(random.randint(0,1))
-            print(lista)
             if (lista[i] < 3):
-#                print(lista)
                 print ("Error ", str (i))
 
-if __name__ == '__main__':
 
 
-    with multiprocessing.Manager() as manager:
-        num_process = 1
-        lista=manager.list(range(num_process))
+class ListObj(object):
+        def __init__(self, lista):
+                self.lista = lista
+
+        def set_value(self, indice_lista, codigo_alarma):
+                self.lista[indice_lista] = codigo_alarma
+
+        def get_obj(self):
+                return self.lista
+
+
+if __name__=="__main__":
+
+        BaseManager.register('ListObj', ListObj)
+        manager = BaseManager()
+        manager.start()
+
+        num_process = 12
+
+        lista=list(range(num_process))
         lista = [100 for i in range(num_process)] #inicializamos con 100
-#        print(lista)
+        listObl = manager.ListObj(lista)
 
-        sensores=[Sensor.Sensor(lista, i) for i in range(num_process)]
+        print(listObl.get_obj())
 
-        alarma = multiprocessing.Process(target=alarmas, args=(num_process,lista))
+        process_list = []
+        for p in range(num_process):
+                proc = Sensor.Sensor(listObl, p)
+                process_list.append(proc)
 
-        for s in sensores:
-            s.start()
 
-        alarma.start()
+        for x in range(num_process):
+                process_list[x].start()
 
-        for s in sensores:
-            s.join()
+        alarmas(listObl,num_process).start()
 
-        alarmas.join()
+        for x in range(num_process):
+                process_list[x].join()
