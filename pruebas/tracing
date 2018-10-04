@@ -2,6 +2,10 @@ perf convierte los archivos en tipo .data y no pueden ser visualizados por herra
 otros. Para poder convertir los archivos perf.data a otros formatos como cft (quizás también otf) hay que compilar un nuevo kernel con una 
 serie de banderas que permitan usar "perf data convert ...".
 
+Para grabar con perf
+
+perf record python MergeSort.py 1000000 1
+
 Usando lttng se pudo grabar en una carpeta-proyecto usando lo siguiente:
 - lttng create nombre
 - lttng enable-event --kernel --all
@@ -17,4 +21,16 @@ que supuestamente se arregla haciendo un downgrade del kernel. Se actualizó el 
 
 Hay que instlar el plugin de lttng en eclipse.
 
+------------------------------------------------
 
+Lo que se logró con lttng y tracecompass 
+
+lttng create 
+lttng enable-event --kernel --all
+lttng start
+*iniciamos programa*
+lttng stop
+lttng destroy
+
+Abrimos tracecompass, creamos un proyecto, importamos en trace y seleccionamos el tipo de trace. Cuando se abre en common flow podemos filtrar 
+por procesos.
