@@ -28,11 +28,9 @@ def doWork(N,q):
     # guarda el resultado en la cola (Compartida por demas procesos)
     q.put(finalSum)
 
-if __name__ == '__main__':
+def main(tamano):
 
-  if len(sys.argv) == 2 and sys.argv[1].isdigit():
-
-    N = int(sys.argv[1]) #argumento convertido en entero
+    N = int(tamano) #argumento convertido en entero
     startTime = time.time() #tiempo de inicio
     q = Queue() # cola para compartir resultados
 
@@ -51,7 +49,6 @@ if __name__ == '__main__':
 
     # defino procesos
     for i in range(0,lenProcess):
-      #// división entera
       nameProcess[i]= Process(target=doWork, args=(N//num_process,q))
       nameProcess[i].start()
 
@@ -75,5 +72,8 @@ if __name__ == '__main__':
     print ("Tiempo total " + str(workTime) + " segundos")
     print ("Suma del resultado final: " + str(finalSum) )
 
-  else:
-    exit(-1)
+
+if __name__ == '__main__':
+
+     if len(sys.argv) == 2 and sys.argv[1].isdigit():
+         main(sys.argv[1])
