@@ -15,4 +15,4 @@ class Sensor(Process):
             process_queue_3.main(self.tamano)
             tiempo_actual = time.time()
             self.obj.set_value(self.indice_lista, tiempo_actual)
-            print("Soy Sensor - Alarma - Lista", self.indice_lista, tiempo_actual, self.obj.get_obj())
+#            print("Soy Sensor - Alarma - Lista", self.indice_lista, tiempo_actual, self.obj.get_obj())

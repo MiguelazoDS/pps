@@ -69,8 +69,8 @@ def main(tamano):
     workTime =  endTime - startTime #calculo del tiempo para completar el trabajo
 
     #imprimo resultados
-    print ("Tiempo total " + str(workTime) + " segundos")
-    print ("Suma del resultado final: " + str(finalSum) )
+#    print ("Tiempo total " + str(workTime) + " segundos")
+#    print ("Suma del resultado final: " + str(finalSum) )
 
 
 if __name__ == '__main__':
