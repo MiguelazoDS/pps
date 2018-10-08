@@ -1,4 +1,4 @@
-import Sensor
+import Sensor_merge_lineal
 import random
 import time
 from multiprocessing import Process, Manager, Lock
@@ -8,12 +8,12 @@ from multiprocessing.managers import BaseManager
 def alarmas(object, num_process):
 
     while 1:
-        time.sleep(random.randint(14,15))
+        time.sleep(random.randint(15,16))
         lista = object.get_obj()
         print("Vigilante " , lista)
         for i in range (0,num_process):
-            if (lista[i] < 3):
-                print ("Emergencia en ", str (i))
+            tiempo = time.time() - lista[i]
+            print (tiempo)
 
 
 
@@ -34,17 +34,18 @@ if __name__=="__main__":
         manager = BaseManager()
         manager.start()
 
-        num_process = 15 #cantidad de senores
+        num_process = 12 #cantidad de senores
+        tamano = 10000
 
         lista=list(range(num_process))
-        lista = [100 for i in range(num_process)] #inicializamos con 100
+        lista = [-1 for i in range(num_process)] #inicializamos con -1
         listObl = manager.ListObj(lista)
 
         print(listObl.get_obj())
 
         process_list = []
         for p in range(num_process):
-                proc = Sensor.Sensor(listObl, p)
+                proc = Sensor_merge_lineal.Sensor(listObl, p, tamano)
                 process_list.append(proc)
 
 
