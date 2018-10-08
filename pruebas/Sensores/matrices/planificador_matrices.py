@@ -8,12 +8,14 @@ from multiprocessing.managers import BaseManager
 def alarmas(object, num_process):
 
     while 1:
-        time.sleep(random.randint(15,16))
+#        time.sleep(random.randint(1))
         lista = object.get_obj()
-        print("Vigilante " , lista)
+#        print("Vigilante " , lista)
         for i in range (0,num_process):
-            tiempo = time.time() - lista[i]
-            print (tiempo)
+            if(lista[i] > 0):
+                tiempo = time.time() - lista[i]
+                object.set_value(i, -1)
+                print (tiempo)
 
 
 
@@ -34,11 +36,11 @@ if __name__=="__main__":
         manager = BaseManager()
         manager.start()
 
-        num_process = 5 #cantidad de senores
-        tamano_de_matriz = 100000
+        num_process = 2 #cantidad de senores
+        tamano_de_matriz = 1000000
 
         lista=list(range(num_process))
-        lista = [100 for i in range(num_process)] #inicializamos con 100
+        lista = [-1 for i in range(num_process)] #inicializamos con -1
         listObl = manager.ListObj(lista)
 
         print(listObl.get_obj())
