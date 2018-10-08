@@ -7,7 +7,11 @@ from multiprocessing.managers import BaseManager
 
 def alarmas(object, num_process):
 
-    while 1:
+    #bucle de 100 para el promedio
+    tiempo_inicio = time.time()
+    tiempo_limite = 3 #10 segundos
+
+    while ((time.time() - tiempo_inicio) < tiempo_limite):
 #        time.sleep(random.randint(1))
         lista = object.get_obj()
 #        print("Vigilante " , lista)
