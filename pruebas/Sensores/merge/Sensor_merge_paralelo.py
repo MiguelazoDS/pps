@@ -17,4 +17,4 @@ class Sensor(Process):
             MergeSort.mergesort_paralelo([random.randint(0,self.tamano) for i in range(self.tamano)])
             tiempo = time.time()
             self.obj.set_value(self.indice_lista, tiempo)
-            print("Soy Sensor - Alarma - Lista", self.indice_lista, codigo_alarma, self.obj.get_obj())
+            #print("Soy Sensor - Alarma - Lista", self.indice_lista, codigo_alarma, self.obj.get_obj())
