@@ -14,7 +14,7 @@ class Sensor(Process):
     def run(self):
         while 1:
             codigo_alarma = random.randint(0,10)
-            MergeSort.mergesort([random.randint(0,tamano) for i in range(tamano)])
-            time = time.time()
-            self.obj.set_value(self.indice_lista, time)
+            MergeSort.mergesort([random.randint(0,self.tamano) for i in range(self.tamano)])
+            tiempo = time.time()
+            self.obj.set_value(self.indice_lista, tiempo)
             print("Soy Sensor - Alarma - Lista", self.indice_lista, codigo_alarma, self.obj.get_obj())

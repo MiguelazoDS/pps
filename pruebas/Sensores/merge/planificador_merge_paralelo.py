@@ -1,4 +1,4 @@
-import Sensor_matrices
+import Sensor_merge_paralelo
 import random
 import time
 from multiprocessing import Process, Manager, Lock
@@ -34,18 +34,18 @@ if __name__=="__main__":
         manager = BaseManager()
         manager.start()
 
-        num_process = 5 #cantidad de senores
-        tamano_de_matriz = 100000
+        num_process = 12 #cantidad de senores
+        tamano = 10000
 
         lista=list(range(num_process))
-        lista = [100 for i in range(num_process)] #inicializamos con 100
+        lista = [-1 for i in range(num_process)] #inicializamos con -1
         listObl = manager.ListObj(lista)
 
         print(listObl.get_obj())
 
         process_list = []
         for p in range(num_process):
-                proc = Sensor_matrices.Sensor(listObl, p, tamano_de_matriz)
+                proc = Sensor_merge_paralelo.Sensor(listObl, p, tamano)
                 process_list.append(proc)
 
 
