@@ -21,7 +21,30 @@ class ListObj(object):
         def __init__(self, lista):
                 self.lista = lista
 
-        def set_value(self, indice_lista, codigo_alarma):
+        def set_value(self, indice_lista, codigo_al            num_bucles = num_bucles-1
+
+            lista=list(range(num_process))
+            lista = [-1 for i in range(num_process)] #inicializamos con -1
+            listObl = manager.ListObj(lista)
+
+            print(listObl.get_obj())
+
+            process_list = []
+            for p in range(num_process):
+                    proc = Sensor_matrices.Sensor(listObl, p, tamano_de_matriz)
+                    process_list.append(proc)
+
+
+            for x in range(num_process):
+                    process_list[x].start()
+
+            alarmas= Process(target=alarmas, args=(listObl,num_process, tiempo_limite))
+            alarmas.start()
+
+            for x in range(num_process):
+                    process_list[x].join()
+
+            alarmas.join()arma):
                 self.lista[indice_lista] = codigo_alarma
 
         def get_obj(self):
