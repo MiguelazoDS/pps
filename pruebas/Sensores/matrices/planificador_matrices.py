@@ -1,15 +1,18 @@
 import Sensor_matrices
 import random
 import time
+import numpy
 from multiprocessing import Process, Manager, Lock
 from multiprocessing.managers import BaseManager
 
 
-def alarmas(object, num_process):
+def alarmas(object, num_process, tiempo_limite):
 
     #bucle de 100 para el promedio
     tiempo_inicio = time.time()
-    tiempo_limite = 3 #10 segundos
+
+    tiempos_atencion = [] #arreglo con tiempos de atencion
+
 
     while ((time.time() - tiempo_inicio) < tiempo_limite):
 #        time.sleep(random.randint(1))
@@ -18,17 +21,21 @@ def alarmas(object, num_process):
         for i in range (0,num_process):
             if(lista[i] > 0):
                 tiempo = time.time() - lista[i]
+                tiempos_atencion.append(tiempo)
                 object.set_value(i, -1)
-                print (tiempo)
+                #print (tiempos_atencion )
 
+#    print (tiempos_atencion )
+    print (numpy.mean(tiempos_atencion) )
+    print ("termine" )
 
 
 class ListObj(object):
         def __init__(self, lista):
                 self.lista = lista
 
-        def set_value(self, indice_lista, codigo_alarma):
-                self.lista[indice_lista] = codigo_alarma
+        def set_value(self, indice_lista, tiempo_atencion):
+                self.lista[indice_lista] = tiempo_atencion
 
         def get_obj(self):
                 return self.lista
@@ -40,8 +47,9 @@ if __name__=="__main__":
         manager = BaseManager()
         manager.start()
 
-        num_process = 2 #cantidad de senores
+        num_process = 3 #cantidad de senores
         tamano_de_matriz = 1000000
+        tiempo_limite = 3 #tiempo que corre alarmas
 
         lista=list(range(num_process))
         lista = [-1 for i in range(num_process)] #inicializamos con -1
@@ -58,7 +66,10 @@ if __name__=="__main__":
         for x in range(num_process):
                 process_list[x].start()
 
-        alarmas(listObl,num_process).start()
+        alarmas= Process(target=alarmas, args=(listObl,num_process, tiempo_limite))
+        alarmas.start()
 
         for x in range(num_process):
                 process_list[x].join()
+
+        alarmas.join()
