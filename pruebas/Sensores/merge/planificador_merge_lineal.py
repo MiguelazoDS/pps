@@ -7,24 +7,21 @@ from multiprocessing.managers import BaseManager
 
 def alarmas(object, num_process):
     inicio=time.time()
-    while(time.time()-inicio < 3):
-        #time.sleep(random.randint(15,16))
-        lista = object.get_obj()
-        #print("Vigilante " , lista)
-        for i in range (0,num_process):
-            if(lista[i]>0):
-                tiempo = time.time() - lista[i]
-                object.set_value(i,-1)
-                print (tiempo)
-
+    while (time.time()-inicio < 30):
+            lista = object.get_obj()
+            for i in range (0,num_process):
+                if(lista[i]>0):
+                    tiempo = time.time() - lista[i]
+                    object.set_value(i,-1)
+                    print (tiempo)
 
 
 class ListObj(object):
         def __init__(self, lista):
                 self.lista = lista
 
-        def set_value(self, indice_lista, codigo_alarma):
-                self.lista[indice_lista] = codigo_alarma
+        def set_value(self, indice_lista, tiempo_atencion):
+                self.lista[indice_lista] = tiempo_atencion
 
         def get_obj(self):
                 return self.lista
@@ -37,7 +34,7 @@ if __name__=="__main__":
         manager.start()
 
         num_process = 15 #cantidad de senores
-        tamano = 10000
+        tamano = 100000
 
         lista=list(range(num_process))
         lista = [-1 for i in range(num_process)] #inicializamos con -1
@@ -54,9 +51,7 @@ if __name__=="__main__":
         for x in range(num_process):
                 process_list[x].start()
 
-        alarmas(listObl,num_process).start()
+        alarmas(listObl,num_process)#.start()
 
         for x in range(num_process):
                 process_list[x].join()
-
-        print(listObl.get_obj())
