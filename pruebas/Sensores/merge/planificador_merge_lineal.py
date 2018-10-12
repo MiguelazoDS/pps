@@ -35,15 +35,15 @@ class ListObj(object):
                 return self.lista_tiempos_promedios
 
 if __name__=="__main__":
-        num_process = 15
-        tamano_de_matriz = 10000
+        num_process = 1
+        tamano_de_matriz = 10
         if len(sys.argv) >2:
             temp1=int(sys.argv[2])
-            if sys.argv[2].isdigit() and temp1 > 10000 and temp1 < 1000000:
+            if sys.argv[2].isdigit() and temp1 > 10 and temp1 < 100000:
                 tamano_de_matriz=temp1#cantidad de valores
         if len(sys.argv) >1:
             temp2=int(sys.argv[1])
-            if sys.argv[1].isdigit() and temp2 > 15 and temp2 < 100:
+            if sys.argv[1].isdigit() and temp2 > 1 and temp2 < 100:
                 num_process = temp2 #cantidad de sensores
 
         BaseManager.register('ListObj', ListObj)
