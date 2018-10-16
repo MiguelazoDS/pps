@@ -3,13 +3,13 @@
 temp=0
 
 #Elementos
-for i in {100..1000..100}
+for i in {100..2000..100}
 do
   #Muestras
   for j in {1..5}
   do
     let "cont+=1"
-    res=`echo 100/50 | bc -l`
+    res=`echo 100/100 | bc -l`
     output="$(python planificador_merge_lineal.py 15 $i)"
     temp=`echo $temp + $output | bc | awk '{printf "%.10f", $0}'`
     perc=`echo $res*$cont | bc | awk '{printf "%.3f",$0}'`
