@@ -10,7 +10,7 @@ do
   do
     let "cont+=1"
     res=`echo 100/75 | bc -l`
-    output="$(python planificador_matrices.py $i 1000)"
+    output="$(python planificador_merge_paralelo.py $i 1000)"
     temp=`echo $temp + $output | bc | awk '{printf "%.10f", $0}'`
     perc=`echo $res*$cont | bc | awk '{printf "%.3f",$0}'`
     echo $perc% terminado
