@@ -1,8 +1,15 @@
 #!/usr/bin/gnuplot
 
 cant = `cat datos | wc -l`
+set title "Tiempos"
+set xlabel "Cantidad de ..."
+set ylabel "Tiempos [s]"
 set xrange [0:cant]
-set yrange [0:12]
+set yrange [0:cant]
 set term png
 set output "graf.png"
-plot "datos" using 1 with lines
+set style line 1 \
+    linecolor rgb '#0060ad' \
+    linetype 1 linewidth 2 \
+    pointtype 7 pointsize 1.5
+plot "datos" using 1 with linespoints linestyle 1 notitle
