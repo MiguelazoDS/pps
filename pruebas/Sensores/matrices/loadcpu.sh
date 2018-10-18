@@ -21,7 +21,7 @@ while true; do
   let "DIFF_TOTAL=$TOTAL-$PREV_TOTAL"
   let "DIFF_USAGE=(1000*($DIFF_TOTAL-$DIFF_IDLE)/$DIFF_TOTAL+5)/10"
 #  echo -en "\rCPU: $DIFF_USAGE%  \b\b" >>  $1  # $1 primer argumento por comando
-  echo -en "$DIFF_USAGE\r" >>  $1  # $1 primer argumento por comando
+  echo "$DIFF_USAGE" >>  $1  # $1 primer argumento por comando
 
   # Remember the total and idle CPU times for the next check.
   PREV_TOTAL="$TOTAL"
