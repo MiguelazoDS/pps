@@ -5,7 +5,7 @@ set title "Tiempos"
 set xlabel "Cantidad de ..."
 set ylabel "Tiempos [s]"
 set xrange [0:cant]
-set yrange [0:cant]
+set yrange [0:0.02]
 set term png
 set output "graf.png"
 set style line 1 \
