@@ -5,9 +5,18 @@ procesos=15
 muestras=5
 elementos=1000
 
+if [ -e cargaCPU ]
+then
+  rm -rf cargaCPU
+fi
+mkdir cargaCPU
+
 #Procesos
 for i in $(eval echo {1..$procesos})
 do
+  nombrearchivo=./cargaCPU/loadcpu$i
+  #Corremos el script en segundo plano
+  ./loadcpu.sh $nombrearchivo &
   #Muestras
   for j in $(eval echo {1..$muestras})
   do
@@ -19,6 +28,8 @@ do
     perc=`echo $res*$cont | bc | awk '{printf "%.3f",$0}'`
     echo $perc% terminado
   done
+  #Matamos el procesos
+  pkill -f loadcpu.sh
   final=`echo $temp/$muestras | bc -l | awk '{printf "%.10f", $0}'`
   echo $final >> procesos
   temp=0

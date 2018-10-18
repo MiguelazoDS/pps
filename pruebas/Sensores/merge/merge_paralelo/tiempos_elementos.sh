@@ -10,6 +10,9 @@ saltos=100
 #Elementos
 for i in $(eval echo {$inicio..$elementos..$saltos})
 do
+  nombrearchivo=./cargaCPU/loadcpu$i
+  #Corremos el script en segundo plano
+  ./loadcpu.sh $nombrearchivo &
   #Muestras
   for j in $(eval echo {1..$muestras})
   do
@@ -22,6 +25,8 @@ do
     perc=`echo $res*$cont | bc | awk '{printf "%.3f",$0}'`
     echo $perc% terminado
   done
+  #Matamos el procesos
+  pkill -f loadcpu.sh
   final=`echo $temp/$muestras | bc -l | awk '{printf "%.10f", $0}'`
   echo $final >> elementos
   temp=0
