@@ -10,7 +10,7 @@ saltos=100
 #Elementos
 for i in $(eval echo {$inicio..$elementos..$saltos})
 do
-  nombrearchivo=./cargaCPU/loadcpu$i
+  nombrearchivo=./cargaCPUelementos/loadcpu$i
   #Corremos el script en segundo plano
   ./loadcpu.sh $nombrearchivo &
   #Muestras

@@ -5,16 +5,16 @@ procesos=15
 muestras=5
 elementos=1000
 
-if [ -e cargaCPU ]
+if [ -e cargaCPUprocesos ]
 then
-  rm -rf cargaCPU
+  rm -rf cargaCPUprocesos
 fi
-mkdir cargaCPU
+mkdir cargaCPUprocesos
 
 #Procesos
 for i in $(eval echo {1..$procesos})
 do
-  nombrearchivo=./cargaCPU/loadcpu$i
+  nombrearchivo=./cargaCPUprocesos/loadcpu$i
   #Corremos el script en segundo plano
   ./loadcpu.sh $nombrearchivo &
   #Muestras

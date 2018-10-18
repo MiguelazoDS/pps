@@ -7,16 +7,16 @@ elementos=2000
 inicio=100
 saltos=100
 
-if [ -e cargaCPU ]
+if [ -e cargaCPUelementos ]
 then
-  rm -rf cargaCPU
+  rm -rf cargaCPUelementos
 fi
-mkdir cargaCPU
+mkdir cargaCPUelementos
 
 #Elementos
 for i in $(eval echo {$inicio..$elementos..$saltos})
 do
-  nombrearchivo=./cargaCPU/loadcpu$i
+  nombrearchivo=./cargaCPUelementos/loadcpu$i
   #Corremos el script en segundo plano
   ./loadcpu.sh $nombrearchivo &
   #Muestras
