@@ -7,11 +7,12 @@ elementos=1000
 
 rm -rf cargaCPUprocesos
 mkdir cargaCPUprocesos
+rm -rf load_CPU_promedios_procesos
 
 #Procesos
 for i in $(eval echo {1..$procesos})
 do
-  
+
   nombrearchivo=./cargaCPUprocesos/loadcpu$i
 
   ./loadcpu.sh $nombrearchivo & #corro en paralelo el script
@@ -28,8 +29,13 @@ do
   done
   pkill -f loadcpu.sh #matamos el proceso
   final=`echo $temp/$muestras | bc -l | awk '{printf "%.10f", $0}'`
-  echo $final >> procesos
+  echo $final >> tiempos_procesos_salida
   temp=0
 done
 
+for i in $(eval echo {1..$procesos})
+do
+  datamash mean 1 < cargaCPUprocesos/loadcpu$i >> load_CPU_promedios_procesos
+done
 
+rm -rf cargaCPUprocesos

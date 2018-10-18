@@ -9,6 +9,7 @@ saltos=100
 
 rm -rf cargaCPUelementos
 mkdir cargaCPUelementos
+rm -rf load_CPU_promedios_elementos
 
 
 #Elementos
@@ -17,7 +18,7 @@ do
 
   nombrearchivo=./cargaCPUelementos/loadcpu$i
   ./loadcpu.sh $nombrearchivo & #corro en paralelo el script
-  
+
   #Muestras
   for j in $(eval echo {1..$muestras})
   do
@@ -32,6 +33,13 @@ do
   done
   pkill -f loadcpu.sh #matamos el proceso
   final=`echo $temp/$muestras | bc -l | awk '{printf "%.10f", $0}'`
-  echo $final >> elementos
+  echo $final >> tiempos_elementos_salida
   temp=0
 done
+
+for i in $(eval echo {$inicio..$elementos..$saltos})
+do
+  datamash mean 1 < cargaCPUelementos/loadcpu$i >> load_CPU_promedios_elementos
+done
+
+rm -rf cargaCPUelementos
