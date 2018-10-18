@@ -7,9 +7,17 @@ elementos=2000
 inicio=100
 saltos=100
 
+rm -rf cargaCPUelementos
+mkdir cargaCPUelementos
+
+
 #Elementos
 for i in $(eval echo {$inicio..$elementos..$saltos})
 do
+
+  nombrearchivo=./cargaCPUelementos/loadcpu$i
+  ./loadcpu.sh $nombrearchivo & #corro en paralelo el script
+  
   #Muestras
   for j in $(eval echo {1..$muestras})
   do
@@ -22,6 +30,7 @@ do
     perc=`echo $res*$cont | bc | awk '{printf "%.3f",$0}'`
     echo $perc% terminado
   done
+  pkill -f loadcpu.sh #matamos el proceso
   final=`echo $temp/$muestras | bc -l | awk '{printf "%.10f", $0}'`
   echo $final >> elementos
   temp=0
