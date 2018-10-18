@@ -4,17 +4,18 @@ temp=0
 procesos=15
 muestras=5
 elementos=1000
+directorio="cargaCPUprocesos"
 
-if [ -e cargaCPUprocesos ]
+if [ -e $directorio ]
 then
-  rm -rf cargaCPUprocesos
+  rm -rf $directorio
 fi
-mkdir cargaCPUprocesos
+mkdir $directorio
 
 #Procesos
 for i in $(eval echo {1..$procesos})
 do
-  nombrearchivo=./cargaCPUprocesos/loadcpu$i
+  nombrearchivo=./$directorio/loadcpu$i
   #Corremos el script en segundo plano
   ./loadcpu.sh $nombrearchivo &
   #Muestras
@@ -34,3 +35,10 @@ do
   echo $final >> procesos
   temp=0
 done
+
+for i in $directorio/*
+do
+  datamash mean 1 < $i >> promedios
+done
+
+rm -rf $directorio

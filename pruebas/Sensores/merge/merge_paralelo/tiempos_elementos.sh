@@ -6,11 +6,18 @@ muestras=5
 elementos=2000
 inicio=100
 saltos=100
+directorio="cargaCPUelementos"
+
+if [ -e $directorio ]
+then
+  rm -rf $directorio
+fi
+mkdir $directorio
 
 #Elementos
 for i in $(eval echo {$inicio..$elementos..$saltos})
 do
-  nombrearchivo=./cargaCPUelementos/loadcpu$i
+  nombrearchivo=./$directorio/loadcpu$i
   #Corremos el script en segundo plano
   ./loadcpu.sh $nombrearchivo &
   #Muestras
@@ -31,3 +38,10 @@ do
   echo $final >> elementos
   temp=0
 done
+
+for i in $directorio/*
+do
+  datamash mean 1 < $i >> promedios
+done
+
+rm -rf $directorio
