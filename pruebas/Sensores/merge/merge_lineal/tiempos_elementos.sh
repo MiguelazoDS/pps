@@ -41,7 +41,7 @@ done
 
 for i in $directorio/*
 do
-  datamash mean 1 < $i >> promedios
+  datamash mean 1 < $i >> promedios_elementos
 done
 
 rm -rf $directorio
