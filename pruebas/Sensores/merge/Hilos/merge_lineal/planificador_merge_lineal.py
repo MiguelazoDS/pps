@@ -3,38 +3,16 @@ import random
 import time
 import numpy
 import sys
-import multiprocessing
-#No sería necesario si se usa threading
-from multiprocessing.managers import BaseManager
+import threading
 
-#Setea los valores a -1 en lista de procesos y guarda la diferencia en el lugar donde estaba el tiempo del proceso
-def alarmas(object, num_process):
+def alarmas(lista, lista_tiempos_promedios, num_process):
     tiempo_inicio = time.time()
-    while (1):
-        lista = object.get_obj()
+    while (time.time()-tiempo_inicio < 5):
         for i in range (0,num_process):
             if(lista[i] > 0):
                 tiempo = time.time() - lista[i]
-                object.set_value(i, -1)
-                object.set_value_tiempos(tiempo)
-
-#Esto se borraría
-class ListObj(object):
-        def __init__(self, lista, lista_tiempos_promedios):
-                self.lista = lista
-                self.lista_tiempos_promedios = lista_tiempos_promedios
-
-        def set_value(self, indice_lista, tiempo_atencion):
-                self.lista[indice_lista] = tiempo_atencion
-
-        def set_value_tiempos(self, tiempo_atencion):  #para estadistica
-                self.lista_tiempos_promedios.append(tiempo_atencion)
-
-        def get_obj(self):
-                return self.lista
-
-        def get_value_tiempos(self): #para estadistica
-                return self.lista_tiempos_promedios
+                lista[i]= -1
+                lista_tiempos_promedios.append(tiempo)
 
 if __name__=="__main__":
         num_process = 1
@@ -48,38 +26,37 @@ if __name__=="__main__":
             if sys.argv[1].isdigit() and temp2 > 1 and temp2 < 100:
                 num_process = temp2 #cantidad de sensores
 
-        #Estas instrucciones se borrarían.
-        BaseManager.register('ListObj', ListObj)
-        manager = BaseManager()
-        manager.start()
 
         tiempo_limite = 5 #tiempo que corre alarmas
         lista=list(range(num_process))
         lista = [-1 for i in range(num_process)] #inicializamos con -1
         lista_tiempos_promedios = []
-        #Guarda las dos listas en este objeto
-        listObl = manager.ListObj(lista,lista_tiempos_promedios)
 
         process_list = []
         for p in range(num_process):
-                #Le manda a cada proceso el objeto
-                proc = Sensor_merge_lineal.Sensor(listObl, p, tamano_de_matriz)
+                proc = Sensor_merge_lineal.Sensor(lista, p, tamano_de_matriz)
                 process_list.append(proc)
 
         for x in range(num_process):
                 process_list[x].start()
 
-        #Le manda el objeto a la función listObl
-        alarmas= multiprocessing.Process(target=alarmas, args=(listObl,num_process))
+
+
+        alarmas= threading.Thread(target=alarmas, args=(lista, lista_tiempos_promedios, num_process))
         alarmas.start()
+        #alarmas.join()
 
         time.sleep(tiempo_limite)
 
-        for x in range(num_process):
-                process_list[x].terminate()
+        #for x in range(num_process):
+        #        process_list[x].terminate()
 
-        alarmas.terminate()
+        #alarmas.terminate()
 
-        #Hace el promedio con la lista de promedios.
-        media = numpy.mean(listObl.get_value_tiempos() ) #promedio de ti
+        media = numpy.mean(lista_tiempos_promedios) #promedio de ti
         print(media)
+
+        for x in range(num_process):
+            process_list[x].join()
+
+        alarmas.join()
