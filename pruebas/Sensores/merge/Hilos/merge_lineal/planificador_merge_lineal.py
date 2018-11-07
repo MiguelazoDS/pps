@@ -4,10 +4,11 @@ import time
 import numpy
 import sys
 import multiprocessing
+#No sería necesario si se usa threading
 from multiprocessing.managers import BaseManager
 
-
-def alarmas(object, num_process, tiempo_limite):
+#Setea los valores a -1 en lista de procesos y guarda la diferencia en el lugar donde estaba el tiempo del proceso
+def alarmas(object, num_process):
     tiempo_inicio = time.time()
     while (1):
         lista = object.get_obj()
@@ -17,6 +18,7 @@ def alarmas(object, num_process, tiempo_limite):
                 object.set_value(i, -1)
                 object.set_value_tiempos(tiempo)
 
+#Esto se borraría
 class ListObj(object):
         def __init__(self, lista, lista_tiempos_promedios):
                 self.lista = lista
@@ -46,6 +48,7 @@ if __name__=="__main__":
             if sys.argv[1].isdigit() and temp2 > 1 and temp2 < 100:
                 num_process = temp2 #cantidad de sensores
 
+        #Estas instrucciones se borrarían.
         BaseManager.register('ListObj', ListObj)
         manager = BaseManager()
         manager.start()
@@ -54,17 +57,20 @@ if __name__=="__main__":
         lista=list(range(num_process))
         lista = [-1 for i in range(num_process)] #inicializamos con -1
         lista_tiempos_promedios = []
+        #Guarda las dos listas en este objeto
         listObl = manager.ListObj(lista,lista_tiempos_promedios)
 
         process_list = []
         for p in range(num_process):
+                #Le manda a cada proceso el objeto
                 proc = Sensor_merge_lineal.Sensor(listObl, p, tamano_de_matriz)
                 process_list.append(proc)
 
         for x in range(num_process):
                 process_list[x].start()
 
-        alarmas= multiprocessing.Process(target=alarmas, args=(listObl,num_process, tiempo_limite))
+        #Le manda el objeto a la función listObl
+        alarmas= multiprocessing.Process(target=alarmas, args=(listObl,num_process))
         alarmas.start()
 
         time.sleep(tiempo_limite)
@@ -74,5 +80,6 @@ if __name__=="__main__":
 
         alarmas.terminate()
 
+        #Hace el promedio con la lista de promedios.
         media = numpy.mean(listObl.get_value_tiempos() ) #promedio de ti
         print(media)
