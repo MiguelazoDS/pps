@@ -1,5 +1,0 @@
-- Script elementos:
-procesos=15, elementos=[400;8000;400]
-
-- Script procesos:
-procesos=[1;15], elementos=[4000]
