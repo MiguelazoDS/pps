@@ -24,7 +24,7 @@ do
     let "cont+=1"
     aux=`echo $procesos*$muestras | bc`
     res=`echo 100/$aux | bc -l`
-    output="$(python planificador_merge_lineal.py $i $elementos)"
+    output="$(python planificador_merge_multiprocessing.py $i $elementos)"
     temp=`echo $temp + $output | bc | awk '{printf "%.10f", $0}'`
     perc=`echo $res*$cont | bc | awk '{printf "%.3f",$0}'`
     echo $perc% terminado

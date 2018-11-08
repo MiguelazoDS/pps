@@ -27,7 +27,7 @@ do
     aux1=`echo $elementos/$saltos | bc -l`
     aux2=`echo $aux1*$muestras | bc`
     res=`echo 100/$aux2 | bc -l`
-    output="$(python planificador_merge_lineal.py $procesos $i)"
+    output="$(python planificador_merge_multiprocessing.py $procesos $i)"
     temp=`echo $temp + $output | bc | awk '{printf "%.10f", $0}'`
     perc=`echo $res*$cont | bc | awk '{printf "%.3f",$0}'`
     echo $perc% terminado

@@ -1,4 +1,4 @@
-import Sensor_merge_lineal
+import Sensor_merge_multiprocessing
 import random
 import time
 import numpy
